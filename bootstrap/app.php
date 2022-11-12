@@ -11,9 +11,13 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application(
+// $app = new Illuminate\Foundation\Application(
+//     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
+// );
+$app = new App\Application\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +29,10 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
+// $app->singleton("router", function($app){
+//     return new App\Http\Routing\Router($app['events'], $app);
+// });
+
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
